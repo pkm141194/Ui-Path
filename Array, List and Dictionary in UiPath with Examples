@@ -1,0 +1,54 @@
+1.1 Sequence (Sequence)							
+	Private = False						
+	Variables						
+		array(Int32[])					
+		list(List<Int32>)					
+		dictonary(Dictionary<String,Int32>)					
+	Activities						
+		1.23 Assign (Assign)					
+			To = array				
+			Value = {10,20,85,56}				
+			Private = False				
+		1.19 Assign (Assign)					
+			To = list				
+			Value = new list (of Int32)				
+			Private = False				
+		1.15 Add To Collection (AddToCollection<Int32>)					
+			Collection = list				
+			Item = 10				
+			Private = False				
+			TypeArgument = System.Int32				
+		1.11 Add To Collection (AddToCollection<Int32>)					
+			Collection = list				
+			Item = 89				
+			Private = False				
+			TypeArgument = System.Int32				
+		1.7 Assign (Assign)					
+			To = dictonary				
+			Value = new Dictionary(of String, Int32)				
+			Private = False				
+		1.12 Assign (Assign)					
+			To = dictonary("PraveenMishra")				
+			Value = 20000				
+			Private = False				
+		1.7 Add to dictionary (AddToDictionary<String,Int32>)					
+			Dictionary = dictonary				
+			Key = Praveen				
+			Value = 1000				
+			Private = False				
+		1.11 Message Box (MessageBox)					
+			Content = dictonary("Praveen").ToString				
+			AutomaticallyCloseAfter = 00:00:00				
+			Private = False				
+		1.3 For Each (ForEach<Int32>)					
+			Values = list				
+			Private = False				
+			TypeArgument = System.Int32				
+			Body				
+				1.8 Body (Sequence)			
+					Private = False		
+					Activities		
+						1.3 Message Box (MessageBox)	
+							Content = item.ToString
+							AutomaticallyCloseAfter = 00:00:00
+							Private = False
