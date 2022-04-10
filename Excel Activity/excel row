@@ -1,0 +1,23 @@
+1.1 Sequence (Sequence)							
+	Private = False						
+	Variables						
+		exceldata(DataTable)					
+	Activities						
+		1.2 Read Range (ReadRange)					
+			DataTable = exceldata				
+			AddHeaders = False				
+			PreserveFormat = False				
+			Workbook path = C:\Users\pkm14\OneDrive\Desktop\result.xlsx				
+			SheetName = Sheet1				
+			Private = False				
+		1.2 For Each Row in Data Table (ForEachRow)					
+			DataTable = exceldata				
+			Private = False				
+			Body				
+				1.3 Body (Sequence)			
+					Private = False		
+					Activities		
+						1.4 Message Box (MessageBox)	
+							Content = CurrentRow.Item(0).ToString
+							AutomaticallyCloseAfter = 00:00:00
+							Private = False
