@@ -1,0 +1,35 @@
+{
+  "name":"Jhon",
+  "age":31,
+  "cars":{
+       "car1":"Ford",
+	   "car2":"BMW",
+	   "car3":"Fiat"
+  }
+}
+
+1.1 Sequence (Sequence)			
+	Private = False		
+	Variables		
+		JsonString(String)	
+		JsonObject(JObject)	
+		name(String)	
+	Activities		
+		1.2 Read Text File (ReadTextFile)	
+			FileName = C:\Users\pkm14\OneDrive\Desktop\jsonstring.txt
+			Output to = JsonString
+			ResultType = System.String
+			Private = False
+		1.2 Deserialize JSON (DeserializeJson<JObject>)	
+			JsonString = JsonString
+			JsonObject = JsonObject
+			Private = False
+			TypeArgument = Newtonsoft.Json.Linq.JObject
+		1.2 Assign (Assign)	
+			To = name
+			Value = JsonObject.SelectToken("age").ToString
+			Private = False
+		1.2 Message Box (MessageBox)	
+			Content = name.ToString
+			AutomaticallyCloseAfter = 00:00:00
+			Private = False
