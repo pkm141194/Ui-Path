@@ -1,0 +1,43 @@
+1.1 Sequence (Sequence)							
+	Private = False						
+	Variables						
+		getfiles(String[])					
+	Activities						
+		1.2 Assign (Assign)					
+			To = getfiles				
+			Value = Directory.GetFiles("E:\Automation\Manual\26.02.2022_Lohiha\JM_Pdfs", "*.pdf")				
+			Private = False				
+		1.2 For Each (ForEach<Object>)					
+			Values = getfiles				
+			Private = False				
+			TypeArgument = System.Object				
+			Body				
+				1.3 Body (Sequence)			
+					Private = False		
+					Variables		
+						pdf_data(String)	
+						CGST(String)	
+					Activities		
+						1.4 Message Box (MessageBox)	
+							Content = item.ToString
+							AutomaticallyCloseAfter = 00:00:00
+							Private = False
+						1.4 Read PDF Text (ReadPDFText)	
+							FileName = item.ToString
+							Range = All
+							Text = pdf_data
+							Private = False
+						1.14 Assign (Assign)	
+							To = CGST
+							Value = System.Text.RegularExpressions.Regex.Match(pdf_data ,"(?sim)J\.\S.\s\w{10}").Value
+							Private = False
+						1.4 Message Box (MessageBox)	
+							Content = CGST
+							AutomaticallyCloseAfter = 00:00:00
+							Private = False
+						1.13 Write Cell (WriteCell)	
+							Cell = A1
+							Text = CGST
+							SheetName = Sheet1
+							Workbook path = C:\Users\pkm14\OneDrive\Desktop\result.xlsx
+							Private = False
