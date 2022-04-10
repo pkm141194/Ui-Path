@@ -1,0 +1,21 @@
+1.1 Sequence (Sequence)							
+	Private = False						
+	Variables						
+		dtEmployee(DataTable)					
+	Activities						
+		1.10 Build Data Table (BuildDataTable)					
+			DataTable = dtEmployee				
+			Private = False				
+		1.2 Excel Process Scope (ExcelProcessScopeX)					
+			Private = False				
+			Body				
+				1.3 Do (Sequence)			
+					Private = False		
+					Activities		
+						1.4 Write Range (WriteRange)	
+							StartingCell = A1
+							DataTable = dtEmployee
+							AddHeaders = True
+							SheetName = Sheet1
+							Workbook path = E:\Application\AA\test.xlsx
+							Private = False
