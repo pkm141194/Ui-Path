@@ -1,0 +1,23 @@
+1.1 Sequence (Sequence)					
+	Private = False				
+	Variables				
+		getfiles(String[])			
+		PDFText(String)			
+	Activities				
+		1.2 Read PDF With OCR (ReadPDFWithOCR)			
+			ImageDpi = Medium		
+			FileName = E:\Automation\Manual\29.03.2022_Esco. sri durga, om\Esco\Esko Casting\img20220211_07291425.pdf		
+			Range = All		
+			DegreeOfParallelism = -1		
+			Text = PDFText		
+			Private = False		
+			OCREngine		
+				1.3 Microsoft OCR (MicrosoftOCR)	
+					Image = Image
+					ExtractWords = False
+					ResultType = System.Collections.Generic.IEnumerable`1[System.Collections.Generic.KeyValuePair`2[System.Drawing.Rectangle,System.String]]
+					Private = False
+		1.2 Message Box (MessageBox)			
+			Content = PDFText		
+			AutomaticallyCloseAfter = 00:00:00		
+			Private = False		
