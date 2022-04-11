@@ -1,12 +1,7 @@
 1.1 Sequence (Sequence)			
 	Private = False		
 	Variables		
-		num(String)	
-		getfile(String[])	
-		Jsonobject(String)	
-		jobject(JObject)	
-		jsonname(String)	
-		csvReader(DataTable)	
+			
 		input(DataTable)	
 		ouput(DataTable)	
 	Activities		
